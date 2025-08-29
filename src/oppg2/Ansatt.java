@@ -18,6 +18,8 @@ public class Ansatt {
 		this.fornavn = fornavn;
 		this.etternavn = etternavn;
 		this.kjonn = kjonn;
+		this.stilling = stilling;
+		this.aarslonn = aarslonn;
 	}
 
 	public String getFornavn() {

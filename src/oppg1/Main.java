@@ -14,6 +14,7 @@ public class Main {
 		// a
 		List<String> listen = Arrays.asList("10", "1", "20", "110", "21", "12");
 
+
 		// Usortert Liste
 		for(String e : listen) {
 			System.out.print(e + ", ");
@@ -38,6 +39,7 @@ public class Main {
 		System.out.println(beregn(12,13, summerFunksjon));
 		System.out.println(beregn(-5,3, denStorste));
 		System.out.println(beregn(54,45, avstand));
+		
 		
 		
 		
