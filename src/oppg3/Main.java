@@ -62,10 +62,9 @@ public class Main {
 		
 		//Tjener noen over 800k?
 		boolean tjenerOver = ansattList.stream().anyMatch(p -> p.getAarslonn() > 800000);
-		System.out.println("\n"+ "Har noen ansatte over 800.000 i årslønn? " + tjenerOver);
+		System.out.println("\n"+ "Har noen ansatte over 800.000 i årslønn? " + tjenerOver + "\n");
 		
 		//Skriver ut alle ansatt med Stream
-		
 		ansattList.stream().forEach(System.out::println);
 		
 		
