@@ -12,8 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		// Lambda variabler for lønnsendring
-		Function<Ansatt, Double> kroneTillegg = Ansatt -> Ansatt.getAarslonn() + 100.00;
-
+		Function<Ansatt, Double> kroneTillegg = Ansatt -> Ansatt.getAarslonn() + 10000.00;
 		Function<Ansatt, Double> prosentTillegg = Ansatt -> Ansatt.getAarslonn() * 1.05;
 		
 		Function<Ansatt, Double> krLavLonn = Ansatt -> {
@@ -39,7 +38,7 @@ public class Main {
 		ansattList.add(new Ansatt("Jonas", "Nilsen", Kjonn.MANN, "Resepsjonist", 450000));
 		ansattList.add(new Ansatt("Kristin", "Elling", Kjonn.KVINNE, "Admin", 505000));
 		ansattList.add(new Ansatt("Henning", "Grave", Kjonn.MANN, "Vaskehjelp", 410000));
-		ansattList.add(new Ansatt("Grashnik", "Bjoldiz", Kjonn.ALIEN, "elev", 12000));
+		ansattList.add(new Ansatt("Grashnik", "Bjoldiz", Kjonn.ALIEN, "Elev", 12000));
 
 		for(Ansatt e : ansattList) {
 			System.out.println(e.toString());
@@ -47,6 +46,12 @@ public class Main {
 		
 		//Endrer lønnen og skriver ut på nytt
 		lonnsoppgjor(ansattList, prosentTillegg);
+		System.out.println("Ny lønn med 5% økning");
+		
+		for(Ansatt e : ansattList) {
+			System.out.println(e.toString());
+		}
+		lonnsoppgjor(ansattList, kroneTillegg);
 		System.out.println("Ny lønn med 5% økning");
 		
 		for(Ansatt e : ansattList) {
