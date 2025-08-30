@@ -1,7 +1,10 @@
 package oppg3;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.IntStream;
+
 import oppg2.Ansatt;
 import oppg2.Ansatt.Kjonn;
 
@@ -67,7 +70,19 @@ public class Main {
 		//Skriver ut alle ansatt med Stream
 		ansattList.stream().forEach(System.out::println);
 		
+		//Finner person med lavest lønn - NB, kan bare brukes på IKKE-tom liste
+		Ansatt lavestLonn = ansattList.stream()
+			    .min(Comparator.comparing(Ansatt::getAarslonn))
+			    .get();
+		System.out.print("\n"+ "Personen med lavest Årslønn: " + lavestLonn.toString());
 		
+		
+		//Finn ut summen av alle hetall i [1,1000 > som er delelig med 3 eller 5.
+		int intervall = IntStream.rangeClosed(1, 1000)
+				.filter(t -> t% 3 == 0 || t % 5 == 0)
+				.sum();
+		
+		System.out.println("\n"+ "sum: " + intervall);
 		
 		
 	}
