@@ -18,7 +18,7 @@ public class Main {
 		ansattList.add(new Ansatt("Amalie", "Nilsen", Kjonn.KVINNE, "Resepsjonist", 450000));
 		ansattList.add(new Ansatt("Kristin", "Elling", Kjonn.KVINNE, "Sjef", 505000));
 		ansattList.add(new Ansatt("Henning", "Grave", Kjonn.MANN, "Vaskehjelp", 410000));
-		ansattList.add(new Ansatt("Grashnik", "Bjoldiz", Kjonn.ALIEN, "Elev", 12000));
+		ansattList.add(new Ansatt("Grashnik", "Bjoldiz", Kjonn.ALIEN, "Internasjonal veileder", 12000));
 		
 		System.out.println("Orginal liste: ");
 		for(Ansatt e: ansattList) {
@@ -68,13 +68,14 @@ public class Main {
 		System.out.println("\n"+ "Har noen ansatte over 800.000 i årslønn? " + tjenerOver + "\n");
 		
 		//Skriver ut alle ansatt med Stream
+		System.out.println("\n"+ "Skriver ut alle ansatt med Stream: ");
 		ansattList.stream().forEach(System.out::println);
 		
 		//Finner person med lavest lønn - NB, kan bare brukes på IKKE-tom liste
 		Ansatt lavestLonn = ansattList.stream()
 			    .min(Comparator.comparing(Ansatt::getAarslonn))
 			    .get();
-		System.out.print("\n"+ "Personen med lavest Årslønn: " + lavestLonn.toString());
+		System.out.print("\n"+ "Personen med lavest Årslønn: " + lavestLonn.toString() + "\n");
 		
 		
 		//Finn ut summen av alle hetall i [1,1000 > som er delelig med 3 eller 5.
@@ -82,7 +83,7 @@ public class Main {
 				.filter(t -> t% 3 == 0 || t % 5 == 0)
 				.sum();
 		
-		System.out.println("\n"+ "sum: " + intervall);
+		System.out.println("\n"+ "Summen av alle hetall i [1,1000] som er delelig med 3 eller 5: " + intervall);
 		
 		
 	}
