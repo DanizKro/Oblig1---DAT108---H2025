@@ -63,6 +63,7 @@ public class Main {
 			System.out.println(e.toString());
 		}
 		
+		
 		//Tjener noen over 800k?
 		boolean tjenerOver = ansattList.stream().anyMatch(p -> p.getAarslonn() > 800000);
 		System.out.println("\n"+ "Har noen ansatte over 800.000 i årslønn? " + tjenerOver + "\n");
@@ -84,6 +85,8 @@ public class Main {
 				.sum();
 		
 		System.out.println("\n"+ "Summen av alle hetall i [1,1000] som er delelig med 3 eller 5: " + intervall);
+		
+
 		
 		
 	}
